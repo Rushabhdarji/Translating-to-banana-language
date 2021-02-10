@@ -1,0 +1,43 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+textarea{
+    display: block;
+    margin-top: 2rem;
+    min-height: 20vh;
+    width: 100%;
+    box-sizing:border-box;
+}
+main{
+    margin: auto;
+    padding: 2rem;
+    max-width: 600px;
+}
+
+nav{
+    background-color: crimson;
+    padding: 0%;
+    text-align: center;
+    
+}
+button{
+    background-color: #F2C94C;
+    height: 3rem;
+    width: 5rem;
+    border-radius: 8px;
+    border: none;
+    margin: 1rem 2rem;
+    padding: 1rem 0rem; 
+    cursor: pointer;
+}
+#output-txt{
+    display: block;
+    margin-left: 2rem;
+    height: 10vh;
+    width: 75%;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    box-sizing: border-box;
+}

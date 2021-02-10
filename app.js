@@ -1,11 +1,29 @@
+//Referencing the stuffs 
 var btnTranslate = document.querySelector('#btn-translate');//reference the button
 var txtInput = document.querySelector('#input-text');//reference the input i.e. our textarea tag
 var outputDiv = document.querySelector('#output-txt');//referencing the output
 
+//var serverURL = "https://lessonfourapi.tanaypratap.repl.co/translate/yoda.json";
+var serverURL = "https://api.funtranslations.com/translate/minion.json";
+function errorHandler(error) {
+    console.log("error occured" + error);
+    alert("Something Wrong with the server, try again after sometime");
+}
+function testingURL(text) {
+    return serverURL + "?" + "text=" + text;
+}
 //function eventHandler
 function eventHandler() {
     //we created  a block for output and we're writing the input what we've taken from the user in the ouput div
-    outputDiv.innerText = txtInput.value;
+    var inputText = txtInput.value;
+    fetch(testingURL(inputText))
+        .then(response => response.json())
+        .then(json => {
+            var translatedText = json.contents.translated;
+            outputDiv.innerText = translatedText;
+        })
+        .catch(errorHandler)
+    //outputDiv.innerText = txtInput.value;
 };
 //connecting button with event-handler;
 //If don't specify the whole function after the event in addEventListener then we just need to specify the nsame of the function.
